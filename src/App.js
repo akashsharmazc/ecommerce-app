@@ -111,7 +111,7 @@ function App() {
       else{
         filterData=data;
       }
-      filterData.filter((item)=>item.name.includes(search));
+      filterData=filterData.filter((item)=>item.name.includes(search));
       setTimeout(() => {
         setloading(false);
         setfilteredData(filterData);
