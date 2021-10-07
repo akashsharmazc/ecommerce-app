@@ -88,8 +88,10 @@ function App() {
     const [filteredData,setfilteredData]=useState([]);
     //handles Quantity Selection
     const handleQuantitySelect=(name,value)=>{
-      let idx=data.findIndex(x => x.name ===name);
-      data[idx]["quantity"]=value;
+      let newData=[...data];
+      let idx=[...newData].findIndex(x => x.name ===name);
+      newData[idx]["quantity"]=value;
+      setdata(newData);
     }
     //handles Search
     const handleSearch=(fruit,vegetable,searchValue="")=>{
